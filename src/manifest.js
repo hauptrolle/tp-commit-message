@@ -4,7 +4,7 @@ module.exports = {
   version: '1.0.0',
   description: 'Chrome Extension to get commit messages from Target Process',
   author: 'Achim Rolle',
-  homepage_url: 'http://achimrolle.de',
+  homepage_url: 'https://github.com/hauptrolle',
   manifest_version: 2,
   icons: { '16': 'icons/16.png', '128': 'icons/128.png' },
   permissions: [
