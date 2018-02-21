@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import root from './root.vue'
-import AtComponents from 'at-ui'
-import 'at-ui-style'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 
 Vue.config.productionTip = false
 
-Vue.use(AtComponents)
+Vue.use(Vuetify)
 
 /* eslint-disable no-new */
 new Vue({
