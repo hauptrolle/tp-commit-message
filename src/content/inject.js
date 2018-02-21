@@ -1,15 +1,10 @@
 import copy from 'copy-to-clipboard'
+import defaults from '../ext/defaultOptions'
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.message === 'clicked_browser_action') {
     // Get options
-    chrome.storage.sync.get([
-      'selectedCardSelector',
-      'openedCardSelector',
-      'openedCardTypeSelector',
-      'openedCardIdSelector',
-      'openedCardNameSelector'
-    ], response => {
+    chrome.storage.sync.get(defaults.selectors, response => {
       const {
         selectedCardSelector,
         openedCardSelector,
@@ -51,7 +46,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 const formatMessage = data => {
   return new Promise((resolve, reject) => {
-    chrome.storage.sync.get(['showType', 'showId', 'showName'], response => {
+    chrome.storage.sync.get(defaults.show, response => {
       const { showType, showId, showName } = response
       const message = `${showType ? `[${data.type}] ` : ''}${showId ? `${data.id} - ` : ''}${showName ? `${data.name}` : ''}`
       resolve(message)

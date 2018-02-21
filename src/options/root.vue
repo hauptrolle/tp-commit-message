@@ -71,15 +71,10 @@
   </v-app>
 </template>
 <script>
+  import defaults from '../ext/defaultOptions'
   const defaultOptions = {
-    selectedCardSelector: '[role="cell"] .tau-selected',
-    openedCardSelector: '.tau-cover-view__content',
-    openedCardTypeSelector: '.tau-entity-icon',
-    openedCardIdSelector: '.entity-id__link',
-    openedCardNameSelector: '.view-header__entity-title',
-    showType: true,
-    showId: true,
-    showName: true
+    ...defaults.selectors,
+    ...defaults.show
   }
 
   export default {

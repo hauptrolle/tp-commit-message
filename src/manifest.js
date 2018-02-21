@@ -28,17 +28,18 @@ module.exports = {
     }
   },
   background: {
-    scripts: [
-      'js/background.js'
-    ],
+    page: 'pages/background.html',
     persistent: true,
   },
   options_page: 'pages/options.html',
   content_scripts: [{
-    js: [ 'js/inject.js' ],
+    js: [
+      'js/manifest.js',
+      'js/vendor.js',
+      'js/inject.js'
+    ],
     matches: ['<all_urls>'],
     all_frames: true
   }],
   content_security_policy: "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  web_accessible_resources: [ 'js/content.js' ]
 }

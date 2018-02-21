@@ -85,9 +85,9 @@ module.exports = {
     ]
   },
   plugins: [
-    htmlPage('home', 'app', ['tab']),
-    htmlPage('options', 'options', ['options']),
-    htmlPage('background', 'background', ['background']),
+    htmlPage('home', 'app', ['manifest', 'vendor', 'tab']),
+    htmlPage('options', 'options', ['manifest', 'vendor', 'options']),
+    htmlPage('background', 'background', ['manifest', 'vendor', 'background']),
     new CopyWebpackPlugin([{ from: path.join(__dirname, '..', 'static') }]),
     new ChromeReloadPlugin({
       port: 9090,
