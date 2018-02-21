@@ -8,7 +8,6 @@ let resolve = dir => path.join(__dirname, '..', 'src', dir)
 module.exports = {
   entry: {
     options: resolve('./options'),
-    content: resolve('./content'),
     background: resolve('./backend'),
     inject: resolve('./content/inject'),
   },

@@ -1,6 +1,5 @@
 import copy from 'copy-to-clipboard'
 
-console.log('inject tp-commit-message')
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.message === 'clicked_browser_action') {
     // Get options
@@ -54,7 +53,6 @@ const formatMessage = data => {
   return new Promise((resolve, reject) => {
     chrome.storage.sync.get(['showType', 'showId', 'showName'], response => {
       const { showType, showId, showName } = response
-      console.log('res =>', response)
       const message = `${showType ? `[${data.type}] ` : ''}${showId ? `${data.id} - ` : ''}${showName ? `${data.name}` : ''}`
       resolve(message)
     })

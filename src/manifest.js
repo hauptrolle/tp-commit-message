@@ -19,6 +19,14 @@ module.exports = {
   browser_action: {
     default_icon: 'icons/16.png',
   },
+  commands: {
+    _execute_browser_action: {
+      suggested_key: {
+        windows: 'Ctrl+X',
+        mac: 'Alt+X'
+      },
+    }
+  },
   background: {
     scripts: [
       'js/background.js'
